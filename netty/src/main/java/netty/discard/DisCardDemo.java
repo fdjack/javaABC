@@ -8,13 +8,21 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * @author: zhangyi
  * @date: 2018/12/5 12:00
  * @description:
  */
 public class DisCardDemo {
-
+    private static AtomicInteger currentClients = null;
+    static {
+        /**
+         * 客户端数量
+         */
+        currentClients = new AtomicInteger(0);
+    }
     public static void main(String[] args) {
         //检测客户端连接 ，注册到worker上
         EventLoopGroup boos = new NioEventLoopGroup();
@@ -29,7 +37,7 @@ public class DisCardDemo {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(new DiscardHandler());
+                            ch.pipeline().addLast(new DiscardHandler(currentClients));
                         }
                     });
             //绑定端口，接受连接

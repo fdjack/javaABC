@@ -21,8 +21,6 @@ public class ClientHandler extends ChannelHandlerAdapter {
         System.out.println("服务器返回的信息："+new String(buf,"UTF-8"));
         //释放内存
         ReferenceCountUtil.release(msg);
-
-
     }
 
     @Override
@@ -40,5 +38,4 @@ public class ClientHandler extends ChannelHandlerAdapter {
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         System.out.println("数据发送成功");
     }
-
 }

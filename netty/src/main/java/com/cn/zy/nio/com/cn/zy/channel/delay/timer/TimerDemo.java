@@ -47,6 +47,7 @@ public class TimerDemo {
         },time,1000);
        while(true){}
     }
+
     @Test
     public void timer1(){
         Calendar instance = Calendar.getInstance();

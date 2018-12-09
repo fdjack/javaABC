@@ -41,14 +41,14 @@ public class ClientDemo {
                 String s = scanner.nextLine();
 
                 if (!Objects.isNull(s) && s.equals("exit")) {
-                    connect.channel().writeAndFlush(Unpooled.copiedBuffer(s.getBytes("UTF-8")))
+                    connect.channel()
+                            .writeAndFlush(Unpooled.copiedBuffer(s.getBytes("UTF-8")))
 //                            关闭监听器，代表ChannelFuture执行返回后，关闭连接。
                             .addListener(ChannelFutureListener.CLOSE);
                     break;
                 }
                 connect.channel().writeAndFlush(Unpooled
                                         .copiedBuffer(s.getBytes("UTF-8")));
-//                TimeUnit.SECONDS.sleep(1);
             }
         }catch (UnsupportedEncodingException e) {
             e.printStackTrace();

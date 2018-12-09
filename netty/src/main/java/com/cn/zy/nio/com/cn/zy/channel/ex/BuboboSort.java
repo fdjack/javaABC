@@ -31,7 +31,7 @@ public class BuboboSort implements SortBase {
     }
 
     /**
-     * Ã°ÅİÅÅĞò
+     * buboo sort
      */
     @Test
     public void test(){
@@ -51,14 +51,14 @@ public class BuboboSort implements SortBase {
 //        dataList.stream().forEach(e -> System.out.print(e+" > "));
         long l1 = System.currentTimeMillis();
         System.out.println("");
-        System.out.println("ËùÓÃÊ±¼ä"+(l1-l));
+        System.out.println("ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½"+(l1-l));
 //
 //        long l2 = System.currentTimeMillis();
 //        Integer[] objects = (Integer[]) data1List.toArray();
 //        Integer[] sort = sort(objects);
 //
 //        long l3 = System.currentTimeMillis();
-//        System.out.println("ËùÓÃÊ±¼ä"+(l3-l2));
+//        System.out.println("ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½"+(l3-l2));
     }
 
     @Override

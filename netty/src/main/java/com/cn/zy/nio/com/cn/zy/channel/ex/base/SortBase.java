@@ -10,7 +10,7 @@ import java.util.Comparator;
 public interface SortBase {
 
     /**
-     * ÅÅĞòÊı×é
+     * æ¯”è¾ƒæ¥å£
      *
      * @param unsorted
      * @param <T>

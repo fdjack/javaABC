@@ -6,18 +6,28 @@ import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.CharsetUtil;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * @author: zhangyi
  * @date: 2018/12/5 20:57
  * @description:
  */
-@SuppressWarnings("uncheck")
 public class DiscardHandler extends ChannelHandlerAdapter {
+
+    private AtomicInteger count;
+
+    public DiscardHandler(AtomicInteger count) {
+        this.count = count;
+    }
+
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         System.out.println("客户端断开连接");
         ctx.writeAndFlush(Unpooled.copiedBuffer("有一个客户端断开连接".getBytes("UTF-8")));
-        cause.printStackTrace();
+        count.decrementAndGet();
+//        cause.printStackTrace();
+
     }
 
     @Override
@@ -35,6 +45,7 @@ public class DiscardHandler extends ChannelHandlerAdapter {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        ctx.writeAndFlush(Unpooled.copiedBuffer("---连接成功：",CharsetUtil.UTF_8));
+        String clients = "当前连接数：" + count.incrementAndGet();
+        ctx.writeAndFlush(Unpooled.copiedBuffer(clients,CharsetUtil.UTF_8));
     }
 }

@@ -19,15 +19,15 @@ public class ListDemo {
         listUtils.add(7);
         listUtils.add(100);
         listUtils.traverse();
-        System.out.println("Á´±í³¤¶È£º"+listUtils.getLenght());
+        System.out.println("è‡ªå®šä¹‰é“¾è¡¨é•¿åº¦"+listUtils.getLenght());
         listUtils.insert(2,1000);
         listUtils.traverse();
 
         boolean remove = listUtils.remove(2);
 
-        System.out.println("ÒÆ³ı×´Ì¬£º"+remove);
+        System.out.println("ç§»é™¤é“¾è¡¨ï¼š"+remove);
         listUtils.traverse();
-        System.out.println("Á´±í³¤¶È£º"+listUtils.getLenght());
+        System.out.println("ç§»é™¤åçš„é•¿åº¦ï¼š "+listUtils.getLenght());
 
     }
 

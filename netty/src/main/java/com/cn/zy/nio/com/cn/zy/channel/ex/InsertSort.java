@@ -16,19 +16,12 @@ public class InsertSort extends InitList {
     }
 
     /**
-     1¡¢´ÓµÚÒ»¸öÔªËØ¿ªÊ¼£¬¸ÃÔªËØ¿ÉÒÔÈÏÎªÒÑ¾­±»ÅÅĞò£»
-     2¡¢È¡³öÏÂÒ»¸öÔªËØ£¬ÔÚÒÑ¾­ÅÅĞòµÄÔªËØĞòÁĞÖĞ´ÓºóÏòÇ°É¨Ãè£»
-     3¡¢Èç¹û¸ÃÔªËØ£¨ÒÑÅÅĞò£©´óÓÚĞÂÔªËØ£¬½«¸ÃÔªËØÒÆµ½ÏÂÒ»Î»ÖÃ£»
-     4¡¢ÖØ¸´²½Öè3£¬Ö±µ½ÕÒµ½ÒÑÅÅĞòµÄÔªËØĞ¡ÓÚ»òÕßµÈÓÚĞÂÔªËØµÄÎ»ÖÃ£»
-     5¡¢½«ĞÂÔªËØ²åÈëµ½¸ÃÎ»ÖÃºó£»
-     6¡¢ÖØ¸´²½Öè2~5¡£
      *
      * @param args
      */
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
         InsertSort selectSort = new InsertSort(100);
-        List<Integer> data1List = selectSort.getData1List();
         List<Integer> dataList = selectSort.getDataList();
 //        List<Integer> dataList = new ArrayList<>();
 //        dataList.add(10);
@@ -47,7 +40,7 @@ public class InsertSort extends InitList {
             }
         }
         long endTime = System.currentTimeMillis();
-        System.out.println("Ê±¼ä£º"+(endTime-startTime));
+        System.out.println("Timeï¼š"+(endTime-startTime));
         dataList.stream().forEach(e -> System.out.print(e+" "));
     }
 }

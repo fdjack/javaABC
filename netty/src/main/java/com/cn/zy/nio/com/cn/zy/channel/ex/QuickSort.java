@@ -15,13 +15,6 @@ public class QuickSort extends InitList {
     }
 
     /**
-     该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，
-     得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。
-     若将两个有序表合并成一个有序表，称为2-路归并。
-
-     1、把长度为n的输入序列分成两个长度为n/2的子序列；
-     2、对这两个子序列分别采用归并排序；
-     3、将两个排序好的子序列合并成一个最终的排序序列。
      *
      * @param args
      */
@@ -35,7 +28,7 @@ public class QuickSort extends InitList {
 
 
         long endTime = System.currentTimeMillis();
-        System.out.println("时间："+(endTime-startTime));
+        System.out.println("时锟戒："+(endTime-startTime));
         dataList.stream().forEach(e -> System.out.print(e + " "));
     }
 }

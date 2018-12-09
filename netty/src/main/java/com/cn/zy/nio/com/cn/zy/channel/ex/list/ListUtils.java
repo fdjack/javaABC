@@ -1,30 +1,20 @@
 package com.cn.zy.nio.com.cn.zy.channel.ex.list;
 
+import lombok.Data;
+
 /**
+ * 绠�鍗曞崟閾捐〃瀹炵幇
+ *
  * @author: zhangyi
  * @date: 2018/11/30 09:58
  * @description:
  */
 public class ListUtils<E> {
+
+    @Data
     private class Node{
         private E data;
         private Node next;
-
-        public E getData() {
-            return data;
-        }
-
-        public void setData(E data) {
-            this.data = data;
-        }
-
-        public Node getNext() {
-            return next;
-        }
-
-        public void setNext(Node next) {
-            this.next = next;
-        }
 
         public Node(E data) {
             this.data = data;
@@ -50,7 +40,7 @@ public class ListUtils<E> {
     }
 
     /**
-     * 从尾部插入数据
+     * 鑺傜偣娣诲姞
      *
      * @param node
      */
@@ -62,7 +52,7 @@ public class ListUtils<E> {
     }
 
     /**
-     * 遍历链表
+     * 閬嶅巻鑺傜偣
      */
     public void traverse(){
         point = head;
@@ -74,7 +64,7 @@ public class ListUtils<E> {
     }
 
     /**
-     * 插入数据
+     * 鎻掑叆鑺傜偣
      *
      * @param position
      * @param data
@@ -87,12 +77,12 @@ public class ListUtils<E> {
             point.next = tempData;
             lenght++;
         }else{
-            System.out.println("无效位置");
+            System.out.println("浣嶇疆闈炴硶");
         }
     }
 
     /**
-     * 删除某一个节点的元素
+     * 绉婚櫎鑺傜偣
      *
      * @param position
      * @return
@@ -111,7 +101,7 @@ public class ListUtils<E> {
     }
 
     /**
-     * 移动位置
+     * 绉婚櫎鎸囧畾鑺傜偣
      *
      * @param position
      * @return
